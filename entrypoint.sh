@@ -1,6 +1,17 @@
+#!/usr/bin/env bash
 
-#!/bin/sh -l
+if [ ! -z "$WWWUSER" ]; then
+    usermod -u $WWWUSER sail
+fi
 
-echo "Hello $1"
-time=$(date)
-echo ::set-output name=time::$time
+if [ ! -d /.composer ]; then
+    mkdir /.composer
+fi
+
+chmod -R ugo+rw /.composer
+
+if [ $# -gt 0 ];then
+    exec gosu $WWWUSER "$@"
+else
+    /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+fi

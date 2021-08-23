@@ -65,7 +65,7 @@ COPY php.ini /etc/php/7.4/cli/conf.d/99-sail.ini
 RUN chmod +x /usr/local/bin/start-container
 
 # Expose port 9000 and start php-fpm server
-EXPOSE 8000 9000
+EXPOSE 8000 9000 9001
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["entrypoint"]

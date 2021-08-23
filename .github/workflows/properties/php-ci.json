@@ -1,6 +1,6 @@
 {
-    "name": "PHP",
+    "name": "PHP CI With Mongo",
     "description": "Build and test a PHP application using Composer",
-    "iconName": "php",
+    "iconName": "check-circle",
     "categories": ["PHP", "Composer"]
 }

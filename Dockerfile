@@ -1,14 +1,11 @@
 # Container image that runs your code
 FROM ubuntu:21.04
-
-
-# Copy composer.lock and composer.json
-COPY composer.lock composer.json /var/www/
+ENV DEBIAN_FRONTEND noninteractive
 
 # Set working directory
 WORKDIR /var/www
 
-ENV DEBIAN_FRONTEND noninteractive
+
 
 
 # Install dependencies

@@ -61,8 +61,6 @@ USER www
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY php.ini /etc/php/7.4/cli/conf.d/99-sail.ini
-RUN chmod +x /usr/local/bin/start-container
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 8000 9000 9001
